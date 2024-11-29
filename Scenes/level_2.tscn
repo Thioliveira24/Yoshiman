@@ -339,6 +339,6 @@ position = Vector2(3441, 49)
 position = Vector2(3956, 69)
 
 [node name="Heart7" parent="." instance=ExtResource("10_243e2")]
-position = Vector2(4325, 205)
+position = Vector2(4325, 200)
 
 [connection signal="body_entered" from="DeathArea" to="DeathArea" method="_on_body_entered"]
