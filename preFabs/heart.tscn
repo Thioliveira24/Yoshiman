@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://d62kau5pfh77"]
+
+[ext_resource type="Texture2D" uid="uid://cc555nqardon3" path="res://Mondstadt Tileset Platform - Basic/Mondstadt Tileset Platform - Basic/dodo.png" id="1_lq655"]
+[ext_resource type="Script" path="res://Scripts/heart.gd" id="1_tcu5a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wc5ex"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lq655")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2ngs"]
+radius = 25.8462
+height = 66.0
+
+[node name="Heart" type="Node2D" groups=["heart"]]
+script = ExtResource("1_tcu5a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(5.96046e-08, 2.98023e-08)
+scale = Vector2(0.15067, 0.138258)
+sprite_frames = SubResource("SpriteFrames_wc5ex")
+metadata/_edit_group_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+scale = Vector2(0.232143, 0.242424)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_d2ngs")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

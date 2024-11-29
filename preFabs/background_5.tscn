@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4hp7fh5l375b"]
+
+[ext_resource type="Texture2D" uid="uid://wnij75s14ktl" path="res://layers_fullcolor/sky_fc.png" id="1_s48t6"]
+[ext_resource type="Texture2D" uid="uid://5yfv8r6ltslq" path="res://layers_fullcolor/far_mountains_fc.png" id="2_sjxts"]
+[ext_resource type="Texture2D" uid="uid://b1oe1q0vdipee" path="res://layers_fullcolor/grassy_mountains_fc.png" id="3_ellei"]
+[ext_resource type="Texture2D" uid="uid://0kgk223i5hcx" path="res://layers_fullcolor/clouds_mid_fc.png" id="4_6t0x1"]
+[ext_resource type="Texture2D" uid="uid://ba1gpv8d7j45b" path="res://layers_fullcolor/hill.png" id="5_lmyvb"]
+[ext_resource type="Texture2D" uid="uid://hyad7kc4kah1" path="res://layers_fullcolor/clouds_front_t_fc.png" id="6_gut4q"]
+[ext_resource type="Texture2D" uid="uid://cwtgibh1b6hiy" path="res://layers_fullcolor/clouds_front_fc.png" id="7_l2wro"]
+
+[node name="Background5" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_s48t6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer2"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_sjxts")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer3"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_ellei")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.55, 0.55)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer4"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_6t0x1")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer5"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_6t0x1")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer6"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_lmyvb")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer7"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_gut4q")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer8"]
+texture_filter = 1
+offset_right = 4017.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_l2wro")
+flip_h = true

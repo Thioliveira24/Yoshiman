@@ -1,0 +1,102 @@
+[gd_scene load_steps=12 format=3 uid="uid://0x775okc75lk"]
+
+[ext_resource type="Script" path="res://Scripts/shyguy.gd" id="1_7ng2x"]
+[ext_resource type="Texture2D" uid="uid://o32306wm5lkk" path="res://download (1).png" id="2_7wvrn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3p7a"]
+atlas = ExtResource("2_7wvrn")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7scoi"]
+atlas = ExtResource("2_7wvrn")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ecox3"]
+atlas = ExtResource("2_7wvrn")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvx3s"]
+atlas = ExtResource("2_7wvrn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w7mss"]
+atlas = ExtResource("2_7wvrn")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdlpj"]
+atlas = ExtResource("2_7wvrn")
+region = Rect2(32, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5tqip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3p7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7scoi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ecox3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3p7a")
+}],
+"loop": true,
+"name": &"Hit",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvx3s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w7mss")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdlpj")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 4.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_neynj"]
+radius = 9.0
+height = 24.0
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_luuo0"]
+length = 9.0
+
+[node name="shyguy" type="CharacterBody2D"]
+script = ExtResource("1_7ng2x")
+speed = null
+range = null
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5tqip")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.0753905
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_neynj")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Area2D" type="Area2D" parent="."]
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+rotation = 1.5708
+shape = SubResource("SeparationRayShape2D_luuo0")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+rotation = 4.71239
+shape = SubResource("SeparationRayShape2D_luuo0")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

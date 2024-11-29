@@ -1,0 +1,60 @@
+[gd_scene load_steps=8 format=3 uid="uid://c7ab0cdrqh078"]
+
+[ext_resource type="Texture2D" uid="uid://b6v63uvln6t4w" path="res://Sprites/rosalina_with_her_early_dress_sprites_by_earthbouds_d8wtb0u-fullview-removebg-preview.png" id="1_xv5yw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfpwp"]
+atlas = ExtResource("1_xv5yw")
+region = Rect2(3, 2, 31, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddbdw"]
+atlas = ExtResource("1_xv5yw")
+region = Rect2(34, 2, 31, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2qy5"]
+atlas = ExtResource("1_xv5yw")
+region = Rect2(65, 2, 31, 53)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c1wlj"]
+atlas = ExtResource("1_xv5yw")
+region = Rect2(96, 2, 31, 53)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_63na5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfpwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddbdw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2qy5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c1wlj")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rvagg"]
+radius = 8.0
+height = 34.0
+
+[node name="Rosalina" type="CharacterBody2D"]
+position = Vector2(7, 14)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4.875, -8.625)
+scale = Vector2(0.637097, 0.70283)
+sprite_frames = SubResource("SpriteFrames_63na5")
+animation = &"Walk"
+autoplay = "Walk"
+frame_progress = 0.0941083
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(-6, -12)
+shape = SubResource("CapsuleShape2D_rvagg")

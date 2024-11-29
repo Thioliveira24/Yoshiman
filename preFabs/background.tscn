@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://vom5sgskhcjw"]
+
+[ext_resource type="Texture2D" uid="uid://lpidhewodw77" path="res://Mondstadt Background Wallpaper/Mondstadt Background Wallpaper/windrise-background-4k.png" id="1_ha21n"]
+
+[node name="Background1" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+offset_right = 48783.0
+offset_bottom = 2304.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_ha21n")
+stretch_mode = 1

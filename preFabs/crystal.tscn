@@ -1,0 +1,65 @@
+[gd_scene load_steps=12 format=3 uid="uid://b0r3coqv6xs7t"]
+
+[ext_resource type="Texture2D" uid="uid://bmncooeyweptq" path="res://Purple/purple_crystal_0000.png" id="1_hfxih"]
+[ext_resource type="Script" path="res://Scripts/crystal.gd" id="1_nxfwa"]
+[ext_resource type="Texture2D" uid="uid://b6mppcfdh66b8" path="res://Purple/purple_crystal_0001.png" id="2_dbpqe"]
+[ext_resource type="Texture2D" uid="uid://cuiw7pbb8olsy" path="res://Purple/purple_crystal_0002.png" id="3_kkty0"]
+[ext_resource type="Texture2D" uid="uid://du4j1kb74je6r" path="res://Purple/purple_crystal_0003.png" id="4_s5qg6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2qbu"]
+atlas = ExtResource("1_hfxih")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_steyf"]
+atlas = ExtResource("2_dbpqe")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_73pql"]
+atlas = ExtResource("3_kkty0")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vxehb"]
+atlas = ExtResource("4_s5qg6")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vfupe"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2qbu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_steyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_73pql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vxehb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlw1p"]
+size = Vector2(6, 12)
+
+[node name="Crystal" type="Node2D" groups=["Crystal"]]
+script = ExtResource("1_nxfwa")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.28125, 0.28125)
+sprite_frames = SubResource("SpriteFrames_vfupe")
+autoplay = "default"
+frame_progress = 0.855782
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_mlw1p")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -1,0 +1,117 @@
+[gd_scene load_steps=8 format=3 uid="uid://bxsqkeyibw0uf"]
+
+[ext_resource type="Texture2D" uid="uid://cru8u62k4fnnx" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/sky.png" id="1_be8b6"]
+[ext_resource type="Texture2D" uid="uid://5bv41qrwtmgb" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_bg.png" id="2_txrny"]
+[ext_resource type="Texture2D" uid="uid://cpyfyfjj7dokx" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/glacial_mountains.png" id="3_p5wpb"]
+[ext_resource type="Texture2D" uid="uid://dvbggewxkwx0g" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_3.png" id="4_n51mu"]
+[ext_resource type="Texture2D" uid="uid://cgjlg8mbn2rhh" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_2.png" id="5_ej3st"]
+[ext_resource type="Texture2D" uid="uid://bltjpej5plagj" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/clouds_mg_1.png" id="6_e6im5"]
+[ext_resource type="Texture2D" uid="uid://ohc5epbeib6i" path="res://Glacial-mountains-parallax-background_vnitti_v3/Glacial-mountains-parallax-background_vnitti/Layers/cloud_lonely.png" id="7_gge07"]
+
+[node name="Background2" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_be8b6")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0.1)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer2"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("2_txrny")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.2, 0.2)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer3"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("3_p5wpb")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.55, 0.55)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer4"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("4_n51mu")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer5"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("5_ej3st")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.6, 0.6)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer6"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("6_e6im5")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer7"]
+texture_filter = 1
+offset_left = -1.0
+offset_right = 4016.0
+offset_bottom = 2267.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_gge07")
+
+[node name="ParallaxLayer8" type="ParallaxLayer" parent="."]
+texture_filter = 1
+motion_scale = Vector2(0.3, 0.3)
+motion_mirroring = Vector2(480, 0)
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxLayer8"]
+texture_filter = 1
+offset_left = -33.0
+offset_top = -30.0
+offset_right = 3984.0
+offset_bottom = 2237.0
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("7_gge07")
+flip_h = true

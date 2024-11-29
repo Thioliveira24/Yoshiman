@@ -1,0 +1,88 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqpp6xcdncwf1"]
+
+[ext_resource type="Script" path="res://SCRIPTS/hud.gd" id="1_gt1py"]
+[ext_resource type="Texture2D" uid="uid://ca0rrrpcyxngg" path="res://Sprites/8111c236ba119345b0efec0df7a6e137.png" id="2_pigc7"]
+[ext_resource type="FontFile" uid="uid://dhxjydnbojmvd" path="res://supermario85dxsuper.ttf" id="3_xanlx"]
+[ext_resource type="Texture2D" uid="uid://dybjhn5fcqe5" path="res://Sprites/coin_.png" id="4_llpqb"]
+[ext_resource type="Texture2D" uid="uid://bmncooeyweptq" path="res://Purple/purple_crystal_0000.png" id="5_5ylpi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_jeolh"]
+font = ExtResource("3_xanlx")
+font_color = Color(0.988235, 0.407843, 0, 0.796078)
+outline_size = 4
+outline_color = Color(0.564706, 0, 0, 0.592157)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_u8nem"]
+font = ExtResource("3_xanlx")
+font_color = Color(0.960784, 0.631373, 0, 1)
+outline_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0bep6"]
+font = ExtResource("3_xanlx")
+font_color = Color(1, 0, 1, 1)
+outline_color = Color(0, 0, 1, 1)
+shadow_color = Color(0, 0, 0, 0.929412)
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_gt1py")
+
+[node name="Life" type="Node2D" parent="."]
+position = Vector2(27, 23)
+metadata/_edit_group_ = true
+
+[node name="Life" type="Sprite2D" parent="Life"]
+texture_filter = 1
+position = Vector2(1, 5.75)
+scale = Vector2(1, 0.973684)
+texture = ExtResource("2_pigc7")
+region_enabled = true
+region_rect = Rect2(211, 11, 16, 19)
+
+[node name="LifeText" type="Label" parent="Life"]
+texture_filter = 1
+offset_left = 19.0
+offset_right = 28.0
+offset_bottom = 21.0
+text = "3"
+label_settings = SubResource("LabelSettings_jeolh")
+
+[node name="Score" type="Node2D" parent="."]
+position = Vector2(27, 53)
+metadata/_edit_group_ = true
+
+[node name="Coin" type="Sprite2D" parent="Score"]
+texture_filter = 1
+position = Vector2(2, 2)
+scale = Vector2(1.4, 1.4)
+texture = ExtResource("4_llpqb")
+region_enabled = true
+region_rect = Rect2(99, 3, 10, 10)
+
+[node name="CoinText" type="Label" parent="Score"]
+texture_filter = 1
+offset_left = 19.0
+offset_top = -5.0
+offset_right = 28.0
+offset_bottom = 12.0
+text = "3"
+label_settings = SubResource("LabelSettings_u8nem")
+
+[node name="Cristals" type="Node2D" parent="."]
+position = Vector2(30, 80)
+metadata/_edit_group_ = true
+
+[node name="Crystal" type="Sprite2D" parent="Cristals"]
+texture_filter = 1
+scale = Vector2(0.359375, 0.40625)
+texture = ExtResource("5_5ylpi")
+
+[node name="CristalText" type="Label" parent="Cristals"]
+texture_filter = 1
+offset_left = 16.0
+offset_top = -6.0
+offset_right = 23.0
+offset_bottom = 11.0
+text = "3"
+label_settings = SubResource("LabelSettings_0bep6")

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ccc4cyw5pjpww"]
+
+[ext_resource type="Script" path="res://Scripts/GameOver.gd" id="1_wyu3u"]
+[ext_resource type="FontFile" uid="uid://dhxjydnbojmvd" path="res://supermario85dxsuper.ttf" id="2_c7vgb"]
+[ext_resource type="Texture2D" uid="uid://c51qr04eajv0v" path="res://Sprites/new_super_mario_bros__wii_game_over_hd_remake__by_shinespritegamer_ddmqhax-pre.jpg" id="2_facni"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_wyu3u")
+
+[node name="NewSuperMarioBrosWiiGameOverHdRemakeByShinespritegamerDdmqhax-pre" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(248, 124)
+scale = Vector2(0.455747, 0.498507)
+texture = ExtResource("2_facni")
+
+[node name="Button" type="Button" parent="."]
+modulate = Color(1, 0.447059, 0.360784, 0.858824)
+self_modulate = Color(1, 0.513726, 0.858824, 0.862745)
+texture_filter = 1
+offset_left = 208.0
+offset_top = 180.0
+offset_right = 276.0
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource("2_c7vgb")
+text = "Try   Again"
+flat = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

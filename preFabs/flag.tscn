@@ -1,0 +1,61 @@
+[gd_scene load_steps=9 format=3 uid="uid://b6t8nek1ww2n4"]
+
+[ext_resource type="Texture2D" uid="uid://dvuy5xdhe5pby" path="res://Sprites/88218-video-game-portal-line-free-transparent-image-hd.png" id="1_jufqc"]
+[ext_resource type="Script" path="res://Scripts/flag.gd" id="1_tyebm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fypu"]
+atlas = ExtResource("1_jufqc")
+region = Rect2(0, 0, 250, 592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3w28"]
+atlas = ExtResource("1_jufqc")
+region = Rect2(250, 0, 250, 592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44duk"]
+atlas = ExtResource("1_jufqc")
+region = Rect2(500, 0, 250, 592)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl1p7"]
+atlas = ExtResource("1_jufqc")
+region = Rect2(750, 0, 250, 592)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gqcw6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fypu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3w28")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44duk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl1p7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ve83h"]
+radius = 13.0
+height = 40.0
+
+[node name="Flag" type="Node2D"]
+script = ExtResource("1_tyebm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.136, 0.0760135)
+sprite_frames = SubResource("SpriteFrames_gqcw6")
+autoplay = "default"
+frame_progress = 0.436899
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("CapsuleShape2D_ve83h")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
